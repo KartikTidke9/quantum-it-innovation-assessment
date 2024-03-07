@@ -1,0 +1,68 @@
+:root {
+  --primary-bg-color: #00f5e1;
+  --secondary-bg-color: #00beba;
+  --tertiary-bg-color: #006d6c;
+  --dark-subtle-bg-color:#828AA5;
+  --dark-bg-color: #1d2c4f;
+  --text-secondary-color: #01b0aa;
+  --text-dark-subtle-bg-color:#828AA5;
+}
+
+#root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+.cgradient {
+  background: linear-gradient(
+    to bottom,
+    var(--tertiary-bg-color),
+    var(--secondary-bg-color)
+  );
+}
+
+.cbg-primary {
+  background-color: var(--primary-bg-color);
+}
+.ctext-primary {
+  color: var(--primary-bg-color);
+}
+
+.cbg-secondary {
+  background-color: var(--secondary-bg-color);
+}
+.ctext-secondary {
+  color: var(--text-secondary-color);
+}
+
+.cbg-tertiary {
+  background-color: var(--tertiary-bg-color);
+}
+.ctext-tertiary {
+  color: var(--tertiary-bg-color);
+}
+
+.cbg-dark {
+  background-color: var(--dark-bg-color);
+}
+.ctext-dark {
+  color: var(--dark-bg-color);
+}
+
+.cbg-dark-subtle {
+  background-color: var(--dark-subtle-bg-color);
+}
+.ctext-dark-subtle {
+  color: var(--text-dark-subtle-bg-color);
+}
+
+.hover:hover{
+  scale: 1.01;
+}
+
+.cursor-pointer{
+  cursor: pointer;
+}
