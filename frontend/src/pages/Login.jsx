@@ -32,7 +32,7 @@ export default function Registration() {
       if (!response.data.error) {
         const user = JSON.stringify(response.data);
         localStorage.setItem("user", user);
-        navigate("/", { replace: true });
+        navigate("/", { replace: true, state: { loggedIn: true } });
       }
     } catch (err) {
       setErrorLoadingLogin(err.response.data.error);
@@ -42,11 +42,10 @@ export default function Registration() {
   };
 
   return (
-    <div className="cgradient container">
-      <div className="col-4 position-absolute border-primary top-50 start-50 translate-middle">
-        <div className="container cbg-dark px-5 py-4 rounded-2">
+    <div className="cgradient container-fluid default">
+      <div className="col-10 col-md-6 col-lg-4 position-absolute cbg-dark border-primary shadow-lg top-50 start-50 translate-middle container px-5 py-4 rounded-2">
           {/* heading */}
-          <h1 className="col-4 fw-bold rounded-pill offset-4 text-center fs-4 p-3 text-uppercase ctext-secondary">
+          <h1 className="col-4 col-md-6 fw-bold rounded-pill offset-4 offset-md-3 text-center fs-4 p-3 text-uppercase ctext-secondary">
             Sign In
           </h1>
 
@@ -129,7 +128,6 @@ export default function Registration() {
               )}
             </div>
           </form>
-        </div>
       </div>
     </div>
   );

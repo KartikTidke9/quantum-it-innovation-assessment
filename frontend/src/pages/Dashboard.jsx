@@ -1,10 +1,11 @@
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { USERS } from "../data/data";
 
 export default function Dashboard() {
   const navigate = useNavigate();
-
+  const { state } = useLocation();
+  
   //handling logout
   const handleLogout = () => {
     localStorage.removeItem("user");
@@ -14,10 +15,10 @@ export default function Dashboard() {
   //navigating user to login if not logged in
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user"));
-    if (!user) {
+    if (!user || !state.loggedIn) {
       navigate("/login");
     }
-  }, [navigate]);
+  }, [navigate, state?.loggedIn]);
 
   return (
     <div className="container d-flex flex-column gap-5 cgradient">

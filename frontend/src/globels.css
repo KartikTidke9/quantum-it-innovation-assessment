@@ -8,7 +8,7 @@
   --text-dark-subtle-bg-color:#828AA5;
 }
 
-#root {
+.default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
